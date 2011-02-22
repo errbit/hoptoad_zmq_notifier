@@ -26,15 +26,4 @@ describe HoptoadNotifierZmq::Sender do
     sleep 1
     @subscriber.recv_string(ZMQ::NOBLOCK).should == @message
   end
-
-  it "should keep small messages amount equal to mailbox size" do
-    (@mailbox_size * 2).times { HoptoadNotifier.sender.send_to_hoptoad(@message) }
-    sleep 1
-    messages = []
-    (@mailbox_size * 2).times {
-      message = @subscriber.recv_string(ZMQ::NOBLOCK)
-      messages << message if message
-    }
-    messages.size.should == @mailbox_size
-  end
 end
