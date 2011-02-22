@@ -21,7 +21,8 @@ module HoptoadNotifierZmq
 
     def socket
       @socket ||= begin
-        s = zmq_context.socket ZMQ::PUSH
+        s = zmq_context.socket ZMQ::PUB
+        s.connect @uri
         s.setsockopt(ZMQ::HWM, mailbox_size)
         s
       end
