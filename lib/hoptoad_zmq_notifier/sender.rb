@@ -2,7 +2,7 @@
 require 'ffi'
 require 'ffi-rzmq'
 
-module HoptoadNotifierZmq
+module HoptoadZmqNotifier
   class Sender
     def send_to_hoptoad data
       logger.debug { "Sending request to #{@uri}:\n#{data}" } if logger
@@ -21,7 +21,7 @@ module HoptoadNotifierZmq
     end
 
     def socket
-      @socket ||= HoptoadNotifierZmq.configuration.socket
+      @socket ||= HoptoadZmqNotifier.configuration.socket
     end
   end
 end

@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "hoptoad_notifier_zmq/version"
+require "hoptoad_zmq_notifier/version"
 
 Gem::Specification.new do |s|
-  s.name        = "hoptoad_notifier_zmq"
-  s.version     = HoptoadNotifierZmq::VERSION
+  s.name        = "hoptoad_zmq_notifier"
+  s.version     = HoptoadZmqNotifier::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Nick Recobra"]
   s.email       = ["oruenu@gmail.com"]

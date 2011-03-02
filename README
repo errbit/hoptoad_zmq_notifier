@@ -1,3 +1,3 @@
-= Hoptoad Notifier 0MQ
+= Hoptoad 0MQ Notifier
 
 Hoptoad notifier extension for speaking to the server over 0mq socket.

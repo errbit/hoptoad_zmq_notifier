@@ -1,5 +1,5 @@
 # encoding: utf-8
-module HoptoadNotifierZmq
+module HoptoadZmqNotifier
   # Used to set up and modify settings for the notifier.
   class Configuration
 

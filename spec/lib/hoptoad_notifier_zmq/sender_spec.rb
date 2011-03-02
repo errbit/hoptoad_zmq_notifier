@@ -1,12 +1,12 @@
 # encoding: utf-8
 require 'spec_helper'
 
-describe HoptoadNotifierZmq::Sender do
+describe HoptoadZmqNotifier::Sender do
   before(:each) do
     @uri = "tcp://127.0.0.1:9998"
     @message = "sample message"
     @mailbox_size = 35
-    HoptoadNotifierZmq.configure do |config|
+    HoptoadZmqNotifier.configure do |config|
       config.uri = @uri
       config.mailbox_size = @mailbox_size
     end

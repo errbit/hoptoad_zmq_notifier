@@ -1,8 +1,8 @@
 # encoding: utf-8
 require 'hoptoad_notifier'
-module HoptoadNotifierZmq
-  autoload :Configuration, 'hoptoad_notifier_zmq/configuration'
-  autoload :Sender, 'hoptoad_notifier_zmq/sender'
+module HoptoadZmqNotifier
+  autoload :Configuration, 'hoptoad_zmq_notifier/configuration'
+  autoload :Sender, 'hoptoad_zmq_notifier/sender'
   class << self
     # The sender object is responsible for delivering formatted data to the Hoptoad server.
     # Must respond to #send_to_hoptoad. See HoptoadNotifier::Sender.
