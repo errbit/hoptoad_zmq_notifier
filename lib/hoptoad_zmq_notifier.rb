@@ -33,7 +33,7 @@ end
 module HoptoadNotifier
   class Sender
     def send_to_hoptoad *args
-      HoptoadNotifierZmq.sender.send_to_hoptoad(*args)
+      HoptoadZmqNotifier.sender.send_to_hoptoad(*args)
     end
   end
 end
