@@ -5,12 +5,12 @@ require 'ffi-rzmq'
 module HoptoadNotifierZmq
   class Sender
     def send_to_hoptoad data
-      logger.debug { "Sending request to #{uri}:\n#{data}" } if logger
+      logger.debug { "Sending request to #{@uri}:\n#{data}" } if logger
       socket.send_string data
     end
 
     def initialize(options = {})
-      [:mailbox_size].each do |option|
+      [:mailbox_size, :uri].each do |option|
         instance_variable_set("@#{option}", options[option])
       end
     end
