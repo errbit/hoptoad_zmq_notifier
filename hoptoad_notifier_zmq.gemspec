@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Nick Recobra"]
   s.email       = ["oruenu@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{0MQ client for Errbit}
+  s.description = %q{Hoptoad Notifier extension making hoptoad client speak to server via 0MQ socket.}
 
   s.rubyforge_project = "hoptoad_notifier_zmq"
 
