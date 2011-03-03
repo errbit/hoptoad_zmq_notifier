@@ -4,6 +4,13 @@ Hoptoad notifier extension for speaking to the server over 0mq socket.
   
 One should use this library to speak to Errbit server extended by Errbit 0MQ Handler (https://github.com/oruen/errbit_zmq_handler)
 
+Advantage of using Hoptoad 0MQ Notifier is async notices sending. You no longer block your app flow with requests to exception handling server.
+0MQ does all that stuff.
+
+== Requirements
+
+Ruby 1.9 or JRuby. ffi-rzmq is not working with MRI (and REE) 1.8.7.
+
 == Installation
 
 Install zeromq 2.1 from http://www.zeromq.org/ or your favorite package system.
@@ -15,13 +22,15 @@ Install the gem:
 == Usage
 
 In the same initializer you initialize your Hoptoad Notifier client:
+  # Your Errbit server config. Only api_key is still relevant.
   HoptoadNotifier.configure do |config|
      config.api_key = 'ba134e3c7fab581e8685cde0a5e68728'
      config.host    = 'localhost'
      config.port    = 3000
   end
   
-  HoptoadZmqHandler.configure do |config|
+  # 0MQ notifier config
+  HoptoadZmqNotifier.configure do |config|
     # Address to connect to send exception notifications 
     config.uri = "tcp://127.0.0.1:9998"
   end
