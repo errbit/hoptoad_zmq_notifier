@@ -23,7 +23,7 @@ describe HoptoadZmqNotifier::Sender do
 
   it "should send messages via 0MQ" do
     HoptoadNotifier.sender.send_to_hoptoad(@message)
-    sleep 1
+    sleep 0.1
     @subscriber.recv_string(ZMQ::NOBLOCK).should == @message
   end
 end

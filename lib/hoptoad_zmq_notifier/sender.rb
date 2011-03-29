@@ -6,7 +6,7 @@ module HoptoadZmqNotifier
   class Sender
     def send_to_hoptoad data
       logger.debug { "Sending request to #{@uri}:\n#{data}" } if logger
-      socket.send_string data
+      socket.send_string data, ZMQ::NOBLOCK
     end
 
     def initialize(options = {})
